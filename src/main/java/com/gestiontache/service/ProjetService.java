@@ -1,29 +1,28 @@
 package com.gestiontache.service;
 
-import com.gestiontache.entities.Task;
+import com.gestiontache.entities.Projet;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 import java.util.Optional;
 
-public interface TaskService {
+public interface ProjetService {
+
+    Projet save(Projet projet) ;
+
+    Projet update(Projet projet) throws Exception;
 
 
-    Task save(Task task) ;
-
-    Task update(Task task) throws Exception;
-
-
-    List<Task> findAll( ) ;
+    List<Projet> findAll( ) ;
 
     /**
-     * Get the "id" Task.
+     * Get the "id" Projet.
      *
      * @param id the id of the entity.
      * @return the entity.
      */
-    Optional<Task> findOne(Long id)throws Error;
+    Optional<Projet> findOne(Long id)throws Error;
     void delete(Long id);
 
 }

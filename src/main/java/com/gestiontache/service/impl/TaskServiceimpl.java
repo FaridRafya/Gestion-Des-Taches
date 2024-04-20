@@ -7,6 +7,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -35,8 +36,8 @@ public class TaskServiceimpl implements TaskService {
 
 
     @Override
-    public Page<Task> findAll(Pageable pageable) {
-        return taskRepository.findAll(pageable);
+    public List<Task> findAll() {
+        return taskRepository.findAll();
     }
 
     @Override

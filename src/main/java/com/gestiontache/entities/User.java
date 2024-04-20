@@ -4,6 +4,8 @@ package com.gestiontache.entities;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class User implements Serializable {
@@ -22,6 +24,9 @@ public class User implements Serializable {
     private String firstName;
     private String lastName;
     private String phoneNumber;
+
+    @ManyToMany
+    private Set<Role> roles = new HashSet<>();
 
 
     public Long getId() {

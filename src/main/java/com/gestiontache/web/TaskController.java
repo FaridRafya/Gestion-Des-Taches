@@ -37,14 +37,14 @@ public class TaskController {
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
-    @GetMapping("/Task")
-    public ResponseEntity<Page<Task>> getTask(Pageable pageable) {
-        Page<Task> page = taskService.findAll((org.springframework.data.domain.Pageable) pageable);
+    @GetMapping("/task")
+    public ResponseEntity<List<Task>> getTask( ) {
+       List<Task> page = taskService.findAll();
         return ResponseEntity.ok().body(page);
     }
 
 
-    @GetMapping(path = "/Task/{id}")
+    @GetMapping(path = "/task/{id}")
     public ResponseEntity<Task> read(@PathVariable Long id) {
         Optional<Task> task= taskService.findOne(id);
         return new ResponseEntity<>(task.get(),HttpStatus.OK);
